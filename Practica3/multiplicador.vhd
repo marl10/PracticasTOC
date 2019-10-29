@@ -34,6 +34,10 @@ architecture Behavioral of multiplicador is
 	signal reg_1, reg_2, reg_3, reg_4, reg_5, reg_6 : std_logic_vector(7 downto 0);
 
 
+
+
+begin
+
 	p_reg: process(clk, rst)
 	begin 
 
@@ -44,7 +48,7 @@ architecture Behavioral of multiplicador is
 			reg_4 <= "00000000";
 			reg_5 <= "00000000";
 			reg_6 <= "00000000";
-		else if rising_edge(clk) then
+		elsif rising_edge(clk) then
 			reg_1 <= aux6; 
 			reg_2 <= aux4;
 			reg_3 <= aux3;
@@ -56,9 +60,6 @@ architecture Behavioral of multiplicador is
 
 	end process; 
 
-
-
-begin
 	sumador_1: sumador
 			port map(
 						 A => aux2,
